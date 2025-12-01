@@ -1,52 +1,43 @@
+
 fn main() {
-    //array
-    let mut x :i32=0;
-    let arr:[i32;4]=[1,2,3,4];
-    let _ =arr.map(|e:i32|{
-        println!("{:?}",e);
-        x+=e;
-    });
+   
+ let s =sum(5,5);
+ println!("{}",s);
+ p();
+ 
+//block
+ let x ={
+    let price=5;
+    let q=10;
+   price * q  
+ };
 
-    let fruits:[&str;3]=["apple","banana","orange"];
-    println!("the fruits is {}",fruits[0]);
-    println!("this is arr {:?}",arr);
-    println!("res is {}",x);
-
-    let mut human:(String,i32,bool) =("khalid".to_string(),30,true);
-    println!("{}",human.0);
-    human.0="Abdi".to_string();
-        println!("{}",human.0);
-    // tuples
-    let obj:(&str,i32,[i32;4],bool)=("khalid",30,[3,414,24,4],true);
-    println!("{}",obj.2[2]);
-
-    //slice
-    let se:&[i32]=&[1,2,3,5,3];
-
-        println!("{:?}",se);
-let arr3:&[i32]=&[1,2,3,4,5,6,7];
-let sli:&[i32]=&arr3[2..4];
-    println!("{:?}",sli);
+ println!("{}",x);
 
 
-    //string
+ println!(" the num is {}",sub(5, 5));
+ println!(" the bmi is {:.2}",BMI(70.0, 1.82));
 
-    let mut stone:String=String::from("khalids");
-    println!("{}",stone);
-    stone.push_str(" abdi");
-        println!("{}",stone);
-
-//str
-
-let st:String=String::from("hello ,world");
-let so:&str=&st[0..4];
-println!("{}",so);
-
-p();
  
 }
 
 
+fn BMI(heighkg:f64,heightm:f64)->f64{
+    heighkg / (heightm *heightm)
+}
+
+
+fn sub(a:i32,v:i32)->i32{
+    a-v
+
+}
+
+
+fn sum(a:i32,b:i32)->i64{
+    (a+b)
+.into()
+}
+
 fn p(){
-    println!("test p")
+    println!("hello world")
 }
