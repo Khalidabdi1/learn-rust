@@ -1,43 +1,30 @@
 
 fn main() {
-   
- let s =sum(5,5);
- println!("{}",s);
- p();
+//rules of ownership
+
+// each value has owner 
+    let s1:String=String::from("khalid");
+    let two=calc(&s1);
+
+    println!("the length for khalid {}",two);
+
+    // only one owner
+    let s2:String=String::from("abdi");
+    let s3=s2;
+    println!(" is{}",s3);
+
+    // out scope value will drop
+    let s4:String=String::from("rust");
+
+
+    let len:usize=calc(&s4);
+
+
  
-//block
- let x ={
-    let price=5;
-    let q=10;
-   price * q  
- };
-
- println!("{}",x);
-
-
- println!(" the num is {}",sub(5, 5));
- println!(" the bmi is {:.2}",BMI(70.0, 1.82));
-
- 
 }
 
 
-fn BMI(heighkg:f64,heightm:f64)->f64{
-    heighkg / (heightm *heightm)
+fn calc(s:&String) ->usize{
+    s.len()
 }
 
-
-fn sub(a:i32,v:i32)->i32{
-    a-v
-
-}
-
-
-fn sum(a:i32,b:i32)->i64{
-    (a+b)
-.into()
-}
-
-fn p(){
-    println!("hello world")
-}
