@@ -1,36 +1,19 @@
 
 fn main() {
-//refernece
- let mut account=bank{
-    owner:"khalid".to_string(),
-    blance:23.2
- };
+//variables
+let mut a:i32=5;
+a=10;
+println!("{}",a);
 
- account.check_blance();
- account.withdraw(45.50);
- account.check_blance();
+//const not allow use mut
+
+const  m:i32=20;
+println!("{}",m );
+
+
+println!("{}",pi);
 
 
 }
 
-
-struct bank{
-    owner:String,
-    blance:f64
-}
-
-impl bank {
-    fn withdraw(&mut self ,amount:f64){
-println!(" withdrawing {} from account owned by {}",amount,self.owner);
-self.blance -=amount;
-    }
-
-
-    fn check_blance(&self){
-        println!("Account owned by {} has {}",self.owner,self.blance);
-    }
-}
-
-
-
-
+const pi :f64=3.14;
