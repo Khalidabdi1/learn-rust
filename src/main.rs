@@ -1,30 +1,36 @@
 
 fn main() {
-//rules of ownership
+//refernece
+ let mut account=bank{
+    owner:"khalid".to_string(),
+    blance:23.2
+ };
 
-// each value has owner 
-    let s1:String=String::from("khalid");
-    let two=calc(&s1);
-
-    println!("the length for khalid {}",two);
-
-    // only one owner
-    let s2:String=String::from("abdi");
-    let s3=s2;
-    println!(" is{}",s3);
-
-    // out scope value will drop
-    let s4:String=String::from("rust");
+ account.check_blance();
+ account.withdraw(45.50);
+ account.check_blance();
 
 
-    let len:usize=calc(&s4);
-
-
- 
 }
 
 
-fn calc(s:&String) ->usize{
-    s.len()
+struct bank{
+    owner:String,
+    blance:f64
 }
+
+impl bank {
+    fn withdraw(&mut self ,amount:f64){
+println!(" withdrawing {} from account owned by {}",amount,self.owner);
+self.blance -=amount;
+    }
+
+
+    fn check_blance(&self){
+        println!("Account owned by {} has {}",self.owner,self.blance);
+    }
+}
+
+
+
 
