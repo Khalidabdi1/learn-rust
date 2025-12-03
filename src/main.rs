@@ -1,32 +1,29 @@
 
 fn main() {
-// Loops
+// Structs
 
-// let mut num1:i32=0;
-
-
-
-// while num1<10 {
-// num1+=1;
-// println!("num is {num1}")
-
-// }
+//tuple
+// let o:(&str,i32)=("khalid",10);
 
 
-let arr:[i32;8]=[1,2,3,4,5,6,7,8];
-// let arr2:(String,i32,String)=("khalid".to_string(),1,"abdi".to_string());
-
-for i in arr {
-    println!("{i}")
+//sturcts
+struct Book{
+name:String,
+age:i32
 }
 
 
-let s:String=String::from("khalid abdi kalib");
 
-    let mut  ch:Vec<String>=vec![];
-    ch.push(s);
-  
-    println!("{:?}",ch[0])
+
+let mut userone:User=User{
+    active:true,
+    name:"khalid".to_string(),
+    email:"E@gmail.com".to_string()
+};
+
+userone.name="abdi".to_string();
+
+println!("{}",userone.name)
 
 
 
@@ -39,4 +36,8 @@ let s:String=String::from("khalid abdi kalib");
 
 }
 
-
+struct User{
+    active:bool,
+    name:String,
+    email:String
+}
