@@ -1,27 +1,35 @@
 
 fn main() {
-// condition (IF)
-let age:i32=15;
+// Loops
 
-if age<18{
-    println!("you can drive")
-}else {
-    println!("tou can't drive")
+// let mut num1:i32=0;
+
+
+
+// while num1<10 {
+// num1+=1;
+// println!("num is {num1}")
+
+// }
+
+
+let arr:[i32;8]=[1,2,3,4,5,6,7,8];
+// let arr2:(String,i32,String)=("khalid".to_string(),1,"abdi".to_string());
+
+for i in arr {
+    println!("{i}")
 }
 
 
-let odd:i32=14;
+let s:String=String::from("khalid abdi kalib");
 
-if odd%2==0{
-    println!("is even")
-}else if odd%2!=0 {
-    println!("id odd")
-}
+    let mut  ch:Vec<String>=vec![];
+    ch.push(s);
+  
+    println!("{:?}",ch[0])
 
 
-let num:bool=true;
-let check=if num {5} else {1};
-println!("{check}");
+
 
 
 
