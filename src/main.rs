@@ -1,19 +1,28 @@
 
 fn main() {
-//variables
-let mut a:i32=5;
-a=10;
-println!("{}",a);
+//shadowing
+let x:i32= 5;
+let x:i32=x+1;
+{
 
-//const not allow use mut
+    let x:i32=x*2;
+    println!("the value is x{}",x);
+}
 
-const  m:i32=20;
-println!("{}",m );
+println!("the value of x is {}",x);
+
+//mutable
+let mut y:i32=7;
+y=10;
+println!("the value of x is {}",y);
+
+let space:&str="";
+println!("the lenth is {}",space.len())
 
 
-println!("{}",pi);
+
 
 
 }
 
-const pi :f64=3.14;
+
