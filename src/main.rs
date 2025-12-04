@@ -1,35 +1,27 @@
+use std::collections::HashMap;
+
 
 
 fn main() {
-// collections
+// hash map
 
-let mut _list:Vec<String>=Vec::new();
-_list.push("khalid".to_string());
-let mut  _t:Vec<i32>=vec![1,2,3,4,5];
-_t.push(100);
 
-for i in _t.iter(){
-    println!("{}",i)
+let mut scors:HashMap<String,i32> =HashMap::new();
+scors.insert(String::from("khalid"),23);
+scors.insert(String::from("abdi"),23);
+scors.insert(String::from("kalib"),23);
+
+
+let team=String::from("khalid2");
+let age=scors.get(&team).copied().unwrap_or(0);
+println!("{:?}",scors);
+println!("the age is {}",age);
+
+
+for(i,m) in &scors{
+    println!("the value :{} and key is {}",i,m);
 }
 
-println!("the list is {:?}",_list);
-
-
-let arr:Vec<i32>=vec![1,2,3,4,5];
-
-let re:&i32=&arr[4];
-let find=arr.get(0);
-
-match find {
-    Some(t)=> println!(" the find is {t}"),
-    None =>println!("not found")
-}
-
-let arr:i32=arr[2];
-
-
-
-println!("the 3 is {} and 4 is {} ",arr,re)
 
 
 }
