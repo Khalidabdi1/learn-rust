@@ -1,56 +1,40 @@
-use std::string;
 
 
 fn main() {
-// enum
+// error handling
 
+let res =de(10.0,0.0 );
 
-
-let  user:Gamer=Gamer { 
-    name: String::from("khalid")
-    , age: 24
-    , status:Status::Busy
- };
-
-p(&user);
-
- fn p(users:&Gamer){
-    println!("the user name is {} and the age is {}",users.name,users.age);
-
-    match users.status{
-        Status::Online =>println!("is online"),
-        Status::Busy =>println!("is bussy"),
-        Status::Offline =>println!("is offline")
-    }
- }
-
- user.you();
+match res{
+    Ok(x)=>println!("res is {}",x),
+    Err(e)=>println!("error is {}",e)
 }
 
 
 
 
-enum Status{
-    Online,
-    Offline,
-    Busy
 }
 
 
-struct Gamer{
-    name:String,
-    age:u32,
-    status:Status
-}
+// enum Result<T,E>{
+//     Ok(T),
+//     Err(E),
+// }
 
 
-impl Gamer{
 
-    fn you(&self){
-        println!("hi gemaer {}",self.name)
+// enum Option<T>{
+//     Some(T),
+//     None
+// }
+
+
+fn de(numer:f64,deno:f64) ->Result<f64,String>{
+    if deno==0.0{
+    Err("not allow".to_string())
+    }else {
+        Ok(numer/deno)
     }
 }
-
-
 
 
