@@ -1,40 +1,40 @@
 
 
 fn main() {
-// error handling
+// collections
 
-let res =de(10.0,0.0 );
+let mut _list:Vec<String>=Vec::new();
+_list.push("khalid".to_string());
+let mut  _t:Vec<i32>=vec![1,2,3,4,5];
+_t.push(100);
 
-match res{
-    Ok(x)=>println!("res is {}",x),
-    Err(e)=>println!("error is {}",e)
+for i in _t.iter(){
+    println!("{}",i)
+}
+
+println!("the list is {:?}",_list);
+
+
+let arr:Vec<i32>=vec![1,2,3,4,5];
+
+let re:&i32=&arr[4];
+let find=arr.get(0);
+
+match find {
+    Some(t)=> println!(" the find is {t}"),
+    None =>println!("not found")
+}
+
+let arr:i32=arr[2];
+
+
+
+println!("the 3 is {} and 4 is {} ",arr,re)
+
+
 }
 
 
 
-
-}
-
-
-// enum Result<T,E>{
-//     Ok(T),
-//     Err(E),
-// }
-
-
-
-// enum Option<T>{
-//     Some(T),
-//     None
-// }
-
-
-fn de(numer:f64,deno:f64) ->Result<f64,String>{
-    if deno==0.0{
-    Err("not allow".to_string())
-    }else {
-        Ok(numer/deno)
-    }
-}
 
 
