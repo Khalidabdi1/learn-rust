@@ -1,43 +1,56 @@
+use std::string;
+
 
 fn main() {
-// Structs
-
-//tuple
-// let o:(&str,i32)=("khalid",10);
+// enum
 
 
-//sturcts
-struct Book{
-name:String,
-age:i32
+
+let  user:Gamer=Gamer { 
+    name: String::from("khalid")
+    , age: 24
+    , status:Status::Busy
+ };
+
+p(&user);
+
+ fn p(users:&Gamer){
+    println!("the user name is {} and the age is {}",users.name,users.age);
+
+    match users.status{
+        Status::Online =>println!("is online"),
+        Status::Busy =>println!("is bussy"),
+        Status::Offline =>println!("is offline")
+    }
+ }
+
+ user.you();
 }
 
 
 
 
-let mut userone:User=User{
-    active:true,
-    name:"khalid".to_string(),
-    email:"E@gmail.com".to_string()
-};
-
-userone.name="abdi".to_string();
-
-println!("{}",userone.name)
-
-
-
-
-
-
-
-
-
-
+enum Status{
+    Online,
+    Offline,
+    Busy
 }
 
-struct User{
-    active:bool,
+
+struct Gamer{
     name:String,
-    email:String
+    age:u32,
+    status:Status
 }
+
+
+impl Gamer{
+
+    fn you(&self){
+        println!("hi gemaer {}",self.name)
+    }
+}
+
+
+
+
