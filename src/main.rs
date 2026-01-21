@@ -3,7 +3,7 @@ use std::collections::HashMap;
 
 
 fn main() {
-// hash map
+// hash map y
 
 
 let mut scors:HashMap<String,i32> =HashMap::new();
